@@ -1,0 +1,52 @@
+.about {
+  &__container {
+    @extend %container;
+  }
+
+  &__wrapper {
+    display: flex;
+    gap: 5rem;
+    justify-content: space-between;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  &__contacts,
+  &__info {
+    flex-basis: 50%;
+
+    @media (max-width: 768px) {
+      flex-basis: auto;
+    }
+  }
+
+  &__contacts {
+    border: 10px solid var(--color-main-2);
+    box-shadow: 1rem 2rem 3rem 0 rgba(#fcdb5a, 0.5);
+    padding: 2rem;
+  }
+
+  &__inner {
+    padding: 3rem;
+  }
+
+  &__item {
+    @include font(var(--font-1), 4rem, var(--fw-500), normal);
+    margin-bottom: 1.5rem;
+    padding-top: 1rem;
+    position: relative;
+
+    @media (max-width: 1024px) {
+      font-size: 2rem;
+    }
+
+    &::before {
+      @include absolute(0, null, null, null);
+      @include size(20%, 0.2rem);
+      background-color: var(--color-main-2);
+      content: '';
+    }
+  }
+}

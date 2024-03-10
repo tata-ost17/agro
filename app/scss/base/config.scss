@@ -1,0 +1,30 @@
+// Color Styles
+$color-main-1: #f4c713;
+$color-main-2: #fcdb5a;
+$color-main-3: #2d2d2d;
+// Color Neutral
+$color-neutral-1: #5a5a5a;
+$color-neutral-2: #f7f7f7;
+$color-neutral-3: #cdcdcd;
+
+$color-white: #fff;
+$color-black: #000;
+
+:root {
+  // Fonts
+  --font-1: "NotoSans", Arial, Tahoma, sans-serif;
+  --font-2: "YanoneKaffeesatz", Arial, Tahoma, sans-serif;
+
+  // Colors
+  --color-main-1: #{$color-main-1};
+  --color-main-2: #{$color-main-2};
+  --color-main-3: #{$color-main-3};
+  --color-white: #{$color-white};
+  --color-black: #{$color-black};
+
+  // Font weight
+  --fw-400: 300;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-700: 700;
+}

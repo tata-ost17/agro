@@ -1,0 +1,46 @@
+%button {
+  @include font(inherit, 2rem, var(--fw-500), normal);
+  @include transition($prop: background-color);
+  // @include min-size(302px, 64px);
+  background-color: transparent;
+  border: 1px solid var(--color-main-1);
+  border-radius: 3rem;
+  color: $color-black;
+  cursor: pointer;
+  display: block;
+  max-width: 30.2rem;
+  min-height: 6.4rem;
+  padding: 1.6rem 3.2rem;
+  position: relative;
+  text-align: center;
+  
+  &::before {
+    @include absolute(0, null, null, 0);
+    @include size(0, 100%);
+    transition: all 250ms ease-in-out 0ms;
+    content: "";
+    background-color: var(--color-main-1);
+    border-color: var(--color-main-1);
+    border-radius: 3rem;
+    transition: all 0.5s ease-in;
+  }
+
+  @include on-event {
+    &::before {
+      width: 100%;
+    }
+  }
+  span {
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 1.6rem;
+    padding: 1.6rem 2.2rem;
+  }
+}
+
+.button {
+  @extend %button;
+}

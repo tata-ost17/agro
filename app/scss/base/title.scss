@@ -1,0 +1,11 @@
+.title {
+  @include font(var(--font-2), 6rem, var(--fw-400), normal);
+    color: var(--color-main-3);
+    line-height: 1;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+
+  @media (max-width: 1024px) {
+    font-size: 4rem;
+  }
+}

@@ -1,0 +1,10 @@
+%container {
+  margin: 0 auto;
+  max-width: 132rem;
+  padding: 0 2rem;
+  // max-width: 100%
+}
+
+.container {
+  @extend %container;
+}

@@ -1,0 +1,53 @@
+@font-face {
+  font-family: "NotoSans";
+  font-display: swap;
+  src: local("NotoSans-Light"), local("NotoSans-Light"),
+    url("../fonts/NotoSans/NotoSans-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NotoSans";
+  font-display: swap;
+  src: local("NotoSans-Regular"), local("NotoSans-Regular"),
+    url("../fonts/NotoSans/NotoSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NotoSans";
+  font-display: swap;
+  src: local("NotoSans-Medium"), local("NotoSans-Medium"),
+    url("../fonts/NotoSans/NotoSans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NotoSans";
+  font-display: swap;
+  src: local("NotoSans-Bold"), local("NotoSans-Bold"),
+    url("../fonts/NotoSans/NotoSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "YanoneKaffeesatz";
+  font-display: swap;
+  src: local("YanoneKaffeesatz-Regular"), local("YanoneKaffeesatz-Regular"),
+    url("../fonts/YanoneKaffeesatz/YanoneKaffeesatz-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "YanoneKaffeesatz";
+  font-display: swap;
+  src: local("YanoneKaffeesatz-Bold"), local("YanoneKaffeesatz-Bold"),
+    url("../fonts/YanoneKaffeesatz/YanoneKaffeesatz-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}

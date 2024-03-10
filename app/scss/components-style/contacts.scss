@@ -1,0 +1,48 @@
+.contacts {
+  &__form {
+    padding: 24px;
+
+    // @media (max-width: 768px) {
+    //   padding: 0;
+    // }
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    @include font(null, 1.4rem, var(--fw-600), normal);
+    color: $color-neutral-1;
+    padding-bottom: 8px;
+  }
+
+  &__input {
+    border-radius: 8px;
+    border: 1px solid var(--color-main-3);
+    padding: 12px;
+
+    @media (max-width: 768px) {
+      font-size: 1.6rem;
+    }
+
+    &:focus {
+      box-shadow: 0 0 15px var(--color-main-2);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  .error {
+    border-color: red;
+  }
+}

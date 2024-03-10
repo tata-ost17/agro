@@ -1,0 +1,121 @@
+.progress {
+  &__container {
+    @extend %container;
+  }
+
+  &__wrapper {
+    position: relative;
+    z-index: 10;
+  }
+
+  &__inner {
+    display: flex;
+    gap: 2.5rem;
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+    }
+  }
+
+  &__info,
+  &__table {
+    flex-basis: 50%;
+
+    @media (max-width: 1024px) {
+      flex-basis: auto;
+    }
+  }
+
+  &__table {
+    @include font(var(--typo-1), 1.4rem, var(--fw-400), normal);
+    border-collapse: collapse;
+    overflow-X: auto;
+
+    @media (max-width: 1024px) {
+      margin-bottom: 5rem;
+    }
+
+    th,
+    td {
+      border-right: 1px solid $color-white;
+      text-align: left;
+    }
+
+    thead {
+      th,
+      td {
+        background-color: var(--color-main-2);
+        font-weight: var(--fw-700);
+        padding: 1.5rem 2rem;
+
+        &:empty {
+          background-color: transparent;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        &:nth-child(even) {
+          background-color: rgba($color-neutral-3, 0.3);
+        }
+      }
+
+      th {
+        background-color: var(--color-main-2);
+        font-weight: var(--fw-700);
+      }
+
+      th,
+      td {
+        border-top: 1px solid $color-white;
+        padding: 1rem 2rem;
+      }
+    }
+
+    tr {
+      th:last-child,
+      td:last-child {
+          border-right: 0;
+      }
+    }
+  }
+
+  &__info {
+    position: relative;
+
+    &::before {
+      @include size(60rem, 28rem);
+      @include absolute(-30%, 0, null, null);
+      content: '';
+      background: {
+        image: url('../../images/decor/decor-1.svg');
+        position: top center;
+        repeat: no-repeat;
+        size: cover;
+      }
+    }
+  }
+
+  .swiper {
+    @include size(27.5rem, 37.5rem);
+    min-width: 0;
+  }
+}
+
+.progress-item {
+  position: relative;
+
+  &:hover {
+    .progress-item__text {
+      visibility: visible;
+    }
+  }
+
+  &__text {
+    @include absolute(1.5rem, null, null, 1.5rem);
+    @include transition;
+    text-transform: uppercase;
+    visibility: hidden;
+  }
+}
