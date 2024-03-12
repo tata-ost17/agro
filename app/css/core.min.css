@@ -1335,24 +1335,15 @@ body {
 }
 
 .mob-menu {
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  right: -100%;
-  top: 0;
-  -webkit-transition: background-color 0.5s ease;
-  transition: background-color 0.5s ease;
-}
-.mob-menu__inner {
   position: absolute;
   top: 0;
   right: -100%;
-  height: 100%;
+  height: 100vh;
   width: 80%;
   background-color: var(--color-main-1);
   padding: 5rem 4rem;
-  -webkit-transition: right 0.5s ease;
-  transition: right 0.5s ease;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
 }
 .mob-menu__list {
   display: -webkit-box;
@@ -1372,15 +1363,11 @@ body {
   font-size: 2rem;
 }
 .mob-menu.menu--active {
-  background-color: rgba(0, 0, 0, 0.6);
-  right: 0;
-}
-.mob-menu.menu--active .mob-menu__inner {
   right: 0;
 }
 
 .hero {
-  min-height: calc(100vh - 8.8rem);
+  min-height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -1442,6 +1429,7 @@ body {
   }
 }
 .hero__tel-link {
+  position: relative;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1449,18 +1437,9 @@ body {
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 2rem;
+  padding-bottom: 1rem;
 }
-.hero__tel-link svg {
-  height: 25px;
-  width: 25px;
-  fill: var(--color-main-3);
-}
-.hero__tel-text {
-  position: relative;
-  margin-left: 1.2rem;
-  padding-bottom: 0.5rem;
-}
-.hero__tel-text::after {
+.hero__tel-link::after {
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
   height: 2px;
@@ -1474,10 +1453,18 @@ body {
       -ms-transform: scaleX(0);
           transform: scaleX(0);
 }
-.hero__tel-text:hover::after, .hero__tel-text:focus::after, .hero__tel-text:focus-within::after {
+.hero__tel-link:hover::after, .hero__tel-link:focus::after, .hero__tel-link:focus-within::after {
   -webkit-transform: scaleX(1);
       -ms-transform: scaleX(1);
           transform: scaleX(1);
+}
+.hero__tel-link svg {
+  height: 25px;
+  width: 25px;
+  fill: var(--color-main-3);
+}
+.hero__tel-text {
+  margin-left: 1.2rem;
 }
 
 .news__inner {
@@ -1547,17 +1534,19 @@ body {
   left: 0;
   height: 0.2rem;
   width: 30%;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
   content: "";
   background-color: #cdcdcd;
+}
+.news__info-item:hover::after, .news__info-item:focus::after, .news__info-item:focus-within::after {
+  width: 100%;
 }
 .news__info-item:last-child .news__info-item::after {
   content: none;
 }
 .news__info-link {
   font-size: 1.9rem;
-}
-.news__info-link:hover, .news__info-link:focus, .news__info-link:focus-within {
-  text-decoration: underline;
 }
 .news__info-date {
   font-family: var(--font-2);
@@ -1667,7 +1656,7 @@ body {
   top: -30%;
   right: 0;
   content: "";
-  background-image: url("../../images/decor/decor-1.svg");
+  background-image: url("../images/decor/decor-1.svg");
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1870,15 +1859,39 @@ body {
           flex-direction: column;
 }
 .footer__menu-link {
+  position: relative;
   font-family: var(--font-1);
   font-size: 2.4rem;
   font-weight: var(--fw-500);
   font-style: normal;
   color: #000;
+  display: inline;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+}
+.footer__menu-link::after {
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  background-color: var(--color-main-3);
+  content: "";
+  -webkit-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+          transform: scaleX(0);
+}
+.footer__menu-link:hover::after, .footer__menu-link:focus::after, .footer__menu-link:focus-within::after {
+  -webkit-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+          transform: scaleX(1);
 }
 @media (max-width: 1024px) {
   .footer__menu-link {
-    font-size: 1.4rem;
+    font-size: 2rem;
   }
 }
 .footer__menu-link:not(:last-child) {
@@ -1893,6 +1906,7 @@ body {
   }
 }
 .footer__contacts-tel {
+  position: relative;
   font-family: var(--font-1);
   font-size: 3rem;
   font-weight: var(--fw-400);
@@ -1903,14 +1917,28 @@ body {
   display: inline-flex;
   margin-bottom: 3rem;
 }
+.footer__contacts-tel::after {
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  background-color: var(--color-main-3);
+  content: "";
+  -webkit-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+          transform: scaleX(0);
+}
+.footer__contacts-tel:hover::after, .footer__contacts-tel:focus::after, .footer__contacts-tel:focus-within::after {
+  -webkit-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+          transform: scaleX(1);
+}
 @media (max-width: 1024px) {
   .footer__contacts-tel {
     font-size: 2rem;
-  }
-}
-@media (max-width: 768px) {
-  .footer__contacts-tel {
-    margin-bottom: 2rem;
   }
 }
 .footer__contacts-info {
@@ -1922,7 +1950,7 @@ body {
 }
 @media (max-width: 1024px) {
   .footer__contacts-info {
-    font-size: 1.4rem;
+    font-size: 2rem;
   }
 }
 .footer__contacts-inner {
@@ -1938,14 +1966,9 @@ body {
   font-style: normal;
   margin-bottom: 2rem;
 }
-@media (max-width: 1024px) {
-  .footer__contacts-title {
-    font-size: 1.4rem;
-  }
-}
 .footer__contacts-link {
-  height: 4rem;
-  width: 4rem;
+  height: 5rem;
+  width: 5rem;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
   -webkit-box-align: center;
@@ -1965,11 +1988,22 @@ body {
           justify-content: center;
   position: relative;
 }
+@media (max-width: 1024px) {
+  .footer__contacts-link {
+    height: 4rem;
+    width: 4rem;
+  }
+}
 .footer__contacts-link:hover, .footer__contacts-link:focus, .footer__contacts-link:focus-within {
   -webkit-box-shadow: 0 0 0 0 rgba(0, 40, 120, 0);
           box-shadow: 0 0 0 0 rgba(0, 40, 120, 0);
   background-position: 0 0;
 }
 .footer__contacts-link::before {
-  font-size: 20px;
+  font-size: 3rem;
+}
+@media (max-width: 1024px) {
+  .footer__contacts-link::before {
+    font-size: 2rem;
+  }
 }

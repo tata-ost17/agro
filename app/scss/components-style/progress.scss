@@ -89,7 +89,7 @@
       @include absolute(-30%, 0, null, null);
       content: '';
       background: {
-        image: url('../../images/decor/decor-1.svg');
+        image: url('../images/decor/decor-1.svg');
         position: top center;
         repeat: no-repeat;
         size: cover;

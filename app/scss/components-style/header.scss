@@ -94,19 +94,11 @@
 }
 
 .mob-menu {
-    @include size(100%);
-    position: fixed;
-    right: -100%;
-    top: 0;
-    transition: background-color 0.5s ease;
-
-  &__inner {
-      @include absolute(0, -100%, null, null);
-      @include size(80%, 100%);
-      background-color: var(--color-main-1);
-      padding: 5rem 4rem;
-      transition: right 0.5s ease;
-  }
+  @include absolute(0, -100%, null, null);
+  @include size(80%, 100vh);
+  background-color: var(--color-main-1);
+  padding: 5rem 4rem;
+  transition: all 0.6s ease;
 
   &__list {
       display: flex;
@@ -121,10 +113,6 @@
   }
 
   &.menu--active {
-    background-color: rgba($color-black, 0.6);
     right: 0;
-    .mob-menu__inner {
-      right: 0;
-    }
   }
 }

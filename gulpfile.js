@@ -61,7 +61,7 @@ function scripts() {
 }
 
 function images() {
-  return src(["app/images/src/*.*", "!app/images/src/*.svg"])
+  return src("app/images/src/*.*")
     .pipe(newer("app/images"))
     .pipe(
       imagemin({
@@ -105,7 +105,7 @@ function building() {
   return src(
     [
       "app/css/core.min.css",
-      "app/images/*.*",
+      "app/images/**/*.*",
       "app/fonts/**/*.*",
       "app/js/main.min.js",
       "app/**/*.html"

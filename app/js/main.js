@@ -4,7 +4,6 @@ const menu = document.querySelector(".mob-menu");
 document.querySelector(".menu__btn").addEventListener("click", () => {
   btn.classList.toggle("menu__btn--active");
   menu.classList.toggle("menu--active");
-  // menu.classList.toggle("menu--color");
 })
 
 const form = document.forms.form;
