@@ -9,15 +9,8 @@
     @extend %container;
   }
 
-  &__item {
-    align-items: center;
-    display: flex;
-    height: 100%;
-    justify-content: flex-end;
-  }
-
   &__content {
-    @include absolute(40%, 0, null,50%);
+    @include absolute(50%, 0, null,50%);
     text-align: center;
     transform: translate(-50%, -50%);
     width: 50%;

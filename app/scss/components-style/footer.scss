@@ -7,19 +7,17 @@
 
   &__wrapper {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     padding: 6.4rem 0 4.8rem;
 
     @media (max-width: 1024px) {
       gap: 2rem;
-      // justify-content: stretch;
+      padding: 3rem 0;
     }
 
     @media (max-width: 768px) {
       align-items: center;
       flex-direction: column;
-      padding: 3.5rem 0;
     }
   }
 
@@ -55,6 +53,10 @@
     max-width: max-content;
 
     @media (max-width: 1024px) {
+      font-size: 1.6rem;
+    }
+
+    @media (max-width: 768px) {
       font-size: 2rem;
     }
 
@@ -79,6 +81,10 @@
     margin-bottom: 3rem;
 
     @media (max-width: 1024px) {
+      font-size: 1.6rem;
+    }
+
+    @media (max-width: 768px) {
       font-size: 2rem;
     }
   }
@@ -88,6 +94,10 @@
     margin-bottom: 1.2rem;
 
     @media (max-width: 1024px) {
+      font-size: 1.6rem;
+    }
+
+    @media (max-width: 768px) {
       font-size: 2rem;
     }
   }
@@ -100,6 +110,14 @@
   &__contacts-title {
     @include font(var(--font-1), 2.4rem, var(--fw-500), normal);
     margin-bottom: 2rem;
+
+    @media (max-width: 1024px) {
+      font-size: 1.6rem;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
   }
 
   &__contacts-link {
@@ -116,7 +134,7 @@
     position: relative;
 
     @media (max-width: 1024px) {
-      @include size(4rem);
+      @include size(3rem);
     }
 
     @include on-event {
@@ -128,7 +146,7 @@
       font-size: 3rem;
 
       @media (max-width: 1024px) {
-        font-size: 2rem;
+        font-size: 1.6rem;
       }
     }
   }

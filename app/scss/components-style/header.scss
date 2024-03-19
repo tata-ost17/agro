@@ -1,10 +1,29 @@
 .header {
-  position: relative;
-
-  &__wrapper {
     @include absolute(0, null, null, 0);
+    @include transition;
     width: 100%;
     z-index: 100;
+
+  &__scroll {
+    background-color: var(--color-main-1);
+    box-shadow: 0 0 1rem 0 rgba($color-black, 0.5);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    -webkit-animation: header .5s;
+    animation: header .5s;
+  }
+
+  @keyframes header {
+    0% {
+      opacity: 0;
+      top: -100px;
+    }
+    100% {
+      opacity: 1;
+      top: 0;
+    }
   }
 
   &__container {
@@ -15,8 +34,12 @@
     align-items: center;
     display: flex;
     justify-content: space-between;
-    min-height: 88px;
+    padding: 2.5rem 0;
     position: relative;
+
+    @media (max-width: 1024px) {
+      padding: 1.5rem 0;
+    }
   }
 
   &__logo {
@@ -38,6 +61,7 @@
     display: flex;
     gap: 4rem;
     justify-content: center;
+
     @media (max-width: 1024px) {
       gap: 2rem;
     }
@@ -45,7 +69,7 @@
 
   &__link {
     @include font(null, 2rem, var(--fw-400), normal);
-    @include underline($height: 2px, $bottom: 2px);
+    @include underline($bottom: 0);
     @include focus($color: currentColor, $offset: 4px);
     color: var(--color-black);
     padding: 0.5rem;
@@ -53,19 +77,20 @@
     text-transform: uppercase;
 
     @media (max-width: 1024px) {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
     }
   }
 }
 
 .menu {
   &__btn {
-    @include absolute(10%, 0, null, null);
+    @include absolute(50%, 0, null, null);
     background-color: transparent;
     border: none;
     cursor: pointer;
     display: none;
-    padding-top: 2rem;
+    padding-top: 1rem;
+    transform: translateY(-50%);
     z-index: 100;
 
     @media (max-width: 768px) {
@@ -94,10 +119,13 @@
 }
 
 .mob-menu {
-  @include absolute(0, -100%, null, null);
   @include size(80%, 100vh);
   background-color: var(--color-main-1);
+  box-shadow: 0 0 3rem 0 rgba($color-black, 0.5);
   padding: 5rem 4rem;
+  position: fixed;
+  top: 0;
+  right: -100%;
   transition: all 0.6s ease;
 
   &__list {
@@ -108,8 +136,9 @@
   }
 
   &__link {
-      color: var(--color-black);
-      font-size: 2rem;
+    @include underline;
+    color: var(--color-black);
+    font-size: 2rem;
   }
 
   &.menu--active {

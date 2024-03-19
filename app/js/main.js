@@ -6,6 +6,21 @@ document.querySelector(".menu__btn").addEventListener("click", () => {
   menu.classList.toggle("menu--active");
 })
 
+window.onscroll = function showHeader() {
+  const header = document.querySelector('.header');
+  (window.scrollY > 200)? header.classList.add('header__scroll') : header.classList.remove('header__scroll');
+}
+
+// window.addEventListener('scroll', e => {
+//   const header = document.querySelector('.header');
+
+//   if(scrollTop() > 300) {
+//     header.classList.add('header__scroll') 
+//    } else {
+//     header.classList.add('header__scroll')
+//    }
+// })
+
 const form = document.forms.form;
 const formInput = document.querySelectorAll(".form__input");
 const email = document.querySelector(".email");
@@ -49,6 +64,7 @@ const swiper = new Swiper('.news__slider', {
 
 const mySwiper = new Swiper('.progress__slider', {
   loop: true,
-  effect: "cards",
-  grabCursor: true
+  pagination: {
+    el: ".swiper-pagination",
+  },
 });

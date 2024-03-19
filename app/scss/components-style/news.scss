@@ -63,22 +63,20 @@
     &::after {
       @include absolute (null, null, -0.5rem, 0);
       @include size(30%, 0.2rem);
+      @include transition;
       content: '';
       background-color: $color-neutral-3;
     }
 
-    &:last-child {
-      .news__info-item::after{
-        content: none;
+    @include on-event {
+      &::after {
+        width: 100%;
       }
     }
   }
 
   &__info-link {
     font-size: 1.9rem;
-    @include on-event {
-      text-decoration: underline;
-    }
   }
 
   &__info-date {

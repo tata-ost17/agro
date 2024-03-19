@@ -3,11 +3,6 @@
     @extend %container;
   }
 
-  &__wrapper {
-    position: relative;
-    z-index: 10;
-  }
-
   &__inner {
     display: flex;
     gap: 2.5rem;
@@ -32,7 +27,7 @@
     overflow-X: auto;
 
     @media (max-width: 1024px) {
-      margin-bottom: 5rem;
+      margin-bottom: 8rem;
     }
 
     th,
@@ -86,7 +81,7 @@
 
     &::before {
       @include size(60rem, 28rem);
-      @include absolute(-30%, 0, null, null);
+      @include absolute(-50%, 0, null, null);
       content: '';
       background: {
         image: url('../images/decor/decor-1.svg');
@@ -94,28 +89,50 @@
         repeat: no-repeat;
         size: cover;
       }
+
+      @media (max-width: 1024px) {
+        @include size(50rem, 20rem);
+        top: -35%;
+      }
     }
   }
 
+  &__slider {
+    position: relative;
+  }
+
   .swiper {
-    @include size(27.5rem, 37.5rem);
+    height: 37.5rem;
+    max-width: 60rem;
     min-width: 0;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: var(--color-main-1);
   }
 }
 
 .progress-item {
   position: relative;
 
-  &:hover {
-    .progress-item__text {
-      visibility: visible;
-    }
+  &__content {
+    display: flex;
+  }
+
+  &__img,
+  &__text {
+    flex-basis: 50%;
+  }
+
+  &__img {
+    width: 100%;
+    height: 30rem;
   }
 
   &__text {
-    @include absolute(1.5rem, null, null, 1.5rem);
-    @include transition;
-    text-transform: uppercase;
-    visibility: hidden;
+    @include font(var(--typo-1), 2rem, var(--fw-400), normal);
+    background-color: $color-white;
+    margin-top: 2rem;
+    padding: 0 3rem;
   }
 }

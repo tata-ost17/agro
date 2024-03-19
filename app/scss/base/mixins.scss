@@ -42,7 +42,7 @@
   transition: $prop $duration $easing;
 }
 
-@mixin underline($height: 1px, $bg-color: var(--color-main-1), $bottom: 2px) {
+@mixin underline($height: 1px, $bg-color: $color-black, $bottom: 2px) {
   position: relative;
 
   &::after {
