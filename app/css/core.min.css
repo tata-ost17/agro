@@ -1,3 +1,4 @@
+@import './node_modules/animate.css/animate.compat.css';
 @font-face {
   font-family: "NotoSans";
   font-display: swap;
@@ -1771,7 +1772,7 @@ body {
           flex-direction: column;
 }
 .form__label {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: var(--fw-600);
   font-style: normal;
   color: #5a5a5a;
@@ -1782,6 +1783,7 @@ body {
   transition: all 300ms ease-in-out;
   border-radius: 8px;
   border: 1px solid var(--color-main-3);
+  font-size: 1.6rem;
   padding: 12px;
 }
 @media (max-width: 768px) {
@@ -2092,5 +2094,88 @@ body {
 @media (max-width: 1024px) {
   .footer__contacts-link::before {
     font-size: 1.6rem;
+  }
+}
+
+.message {
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  position: fixed;
+  bottom: 6%;
+  right: 3%;
+  z-index: 5;
+}
+.message:hover, .message:focus, .message:focus-within {
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
+}
+.message:hover .message__inner::before, .message:focus .message__inner::before, .message:focus-within .message__inner::before {
+  opacity: 1;
+  -webkit-transform: scale(0.8);
+      -ms-transform: scale(0.8);
+          transform: scale(0.8);
+}
+.message__inner {
+  height: 10rem;
+  width: 10rem;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  background-color: var(--color-white);
+  border: 0.1rem solid var(--color-main-3);
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 4rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .message__inner {
+    height: 7rem;
+    width: 7rem;
+  }
+}
+.message__inner::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  background-color: var(--color-main-1);
+  border-radius: 50%;
+  opacity: 0;
+  position: absolute;
+}
+.message span {
+  position: relative;
+  z-index: 1;
+  -webkit-animation: 2s linear 0s infinite alternate phone;
+          animation: 2s linear 0s infinite alternate phone;
+}
+@-webkit-keyframes phone {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(25deg);
+            transform: rotate(25deg);
+  }
+}
+@keyframes phone {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(25deg);
+            transform: rotate(25deg);
   }
 }

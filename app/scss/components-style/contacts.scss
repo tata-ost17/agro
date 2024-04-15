@@ -1,10 +1,6 @@
 .contacts {
   &__form {
     padding: 24px;
-
-    // @media (max-width: 768px) {
-    //   padding: 0;
-    // }
   }
 }
 
@@ -19,7 +15,7 @@
   }
 
   &__label {
-    @include font(null, 1.4rem, var(--fw-600), normal);
+    @include font(null, 1.6rem, var(--fw-600), normal);
     color: $color-neutral-1;
     padding-bottom: 8px;
   }
@@ -28,6 +24,7 @@
     @include transition;
     border-radius: 8px;
     border: 1px solid var(--color-main-3);
+    font-size: 1.6rem;
     padding: 12px;
 
     @media (max-width: 768px) {
