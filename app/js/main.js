@@ -32,10 +32,16 @@ const validateEmail = (email) => {
   return re.test(String(email).toLowerCase());
 };
 
-IMask(
-  phone, 
-  {mask: '+{38}(\\000)000-00-00'}
-);
+let element = document.getElementById('form-phone');
+let maskOptions = {
+        mask: '+{38}(\\000)000-00-00'
+    };
+    let mask = IMask(element, maskOptions);
+
+// IMask(
+//   phone, 
+//   {mask: '+{38}(\\000)000-00-00'}
+// );
 
 form.addEventListener("submit", function (event) {
   let emailVal = email.value,
@@ -52,8 +58,6 @@ form.addEventListener("submit", function (event) {
   // (!validatePhone(phoneVal))? phone.classList.add("error") : phone.classList.remove("error");
 });
 
-new WOW().init();
-
 const swiper = new Swiper('.news__slider', {
   loop: true,
   navigation: {
@@ -68,3 +72,5 @@ const mySwiper = new Swiper('.progress__slider', {
     el: ".swiper-pagination",
   },
 });
+
+new WOW().init();

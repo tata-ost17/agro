@@ -51,7 +51,6 @@ function styles() {
 function scripts() {
   return src([
     "node_modules/swiper/swiper-bundle.js",
-    // "node_modules/imask/dist/imask.js",
     "node_modules/wow.js/dist/wow.js",
     "app/js/main.js"])
     .pipe(concat("main.min.js"))
