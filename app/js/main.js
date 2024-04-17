@@ -10,17 +10,6 @@ window.onscroll = function showHeader() {
   const header = document.querySelector('.header');
   (window.scrollY > 200)? header.classList.add('header__scroll') : header.classList.remove('header__scroll');
 }
-
-// window.addEventListener('scroll', e => {
-//   const header = document.querySelector('.header');
-
-//   if(scrollTop() > 300) {
-//     header.classList.add('header__scroll') 
-//    } else {
-//     header.classList.add('header__scroll')
-//    }
-// })
-
 const form = document.forms.form;
 const formInput = document.querySelectorAll(".form__input");
 const email = document.querySelector(".email");
@@ -37,21 +26,6 @@ let maskOptions = {
         mask: '+{38}(\\000)000-00-00'
     };
     let mask = IMask(element, maskOptions);
-
-// IMask(
-//   phone, 
-//   {mask: '+{38}(\\000)000-00-00'}
-// );
-let element = document.getElementById('form-phone');
-let maskOptions = {
-        mask: '+{38}(\\000)000-00-00'
-    };
-    let mask = IMask(element, maskOptions);
-
-// IMask(
-//   phone, 
-//   {mask: '+{38}(\\000)000-00-00'}
-// );
 
 form.addEventListener("submit", function (event) {
   let emailVal = email.value,
@@ -82,7 +56,5 @@ const mySwiper = new Swiper('.progress__slider', {
     el: ".swiper-pagination",
   },
 });
-
-new WOW().init();
 
 new WOW().init();
