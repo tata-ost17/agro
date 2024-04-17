@@ -42,6 +42,16 @@ let maskOptions = {
 //   phone, 
 //   {mask: '+{38}(\\000)000-00-00'}
 // );
+let element = document.getElementById('form-phone');
+let maskOptions = {
+        mask: '+{38}(\\000)000-00-00'
+    };
+    let mask = IMask(element, maskOptions);
+
+// IMask(
+//   phone, 
+//   {mask: '+{38}(\\000)000-00-00'}
+// );
 
 form.addEventListener("submit", function (event) {
   let emailVal = email.value,
@@ -72,5 +82,7 @@ const mySwiper = new Swiper('.progress__slider', {
     el: ".swiper-pagination",
   },
 });
+
+new WOW().init();
 
 new WOW().init();

@@ -16,6 +16,7 @@
 
   &__label {
     @include font(null, 1.6rem, var(--fw-600), normal);
+    @include font(null, 1.6rem, var(--fw-600), normal);
     color: $color-neutral-1;
     padding-bottom: 8px;
   }
@@ -24,6 +25,7 @@
     @include transition;
     border-radius: 8px;
     border: 1px solid var(--color-main-3);
+    font-size: 1.6rem;
     font-size: 1.6rem;
     padding: 12px;
 
