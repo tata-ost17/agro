@@ -3,6 +3,7 @@
 
   &__container {
     @extend %container;
+    background-color: transparent;
   }
 
   &__wrapper {

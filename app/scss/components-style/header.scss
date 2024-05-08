@@ -28,6 +28,8 @@
 
   &__container {
     @extend %container;
+    background-color: transparent;
+    padding: 0 2rem;
   }
 
   &__inner {
